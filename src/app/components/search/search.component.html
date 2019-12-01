@@ -1,0 +1,49 @@
+<div #bookShelf class="container search-container">
+  <div class="header-container" [routerLink]="['/home']">
+    <img class="prev-img" src="/assets/images/Next.svg" />
+    <span class="heading2">{{ genre }}</span>
+  </div>
+  <div class="search-bar-container">
+    <img class="input-img" src="/assets/images/Search.svg" />
+    <input
+      #searchInput
+      class="search-box"
+      id="search-input"
+      type="text"
+      placeholder="Search"
+      aria-label="Search"
+      autofocus
+    />
+    <img
+      *ngIf="searchInput.value"
+      class="input-img"
+      src="/assets/images/Cancel.svg"
+      (click)="clearSearchInput(searchInput)"
+    />
+  </div>
+  <div *ngIf="bookList$ | async; else loading">
+    <div class="books-shelf-container " *ngIf="isRecordFound; else noDataFound">
+      <div
+        class="card-container col-sm-4"
+        *ngFor="let book of bookList$ | async"
+        (click)="openBook(book)"
+      >
+        <img class="book-card img-thumbnail" src="{{ book.img }}" alt="..." />
+        <div class="book-details">
+          <h5 class="book-name">{{ book.title }}</h5>
+          <p class="book-author">
+            {{
+              book.authors && book.authors.length ? book.authors[0].name : ""
+            }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <ng-template #noDataFound>
+      <div class="loading">No Books Found...</div>
+    </ng-template>
+  </div>
+  <ng-template #loading>
+    <div class="loading">Fetching Books...</div>
+  </ng-template>
+</div>

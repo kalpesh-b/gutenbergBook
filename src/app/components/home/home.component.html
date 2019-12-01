@@ -1,0 +1,19 @@
+<div class=" home-container">
+  <div class="container body-container">
+    <label class="heading1">{{ constants.title }}</label>
+    <label class="heading2">{{ constants.subTitle }}</label>
+    <div class="genre-container">
+      <div class="col-sm-6" *ngFor="let genre of constants.genre">
+        <div
+          class="genre-card "
+          [routerLink]="['/search']"
+          [queryParams]="{ topic: genre }"
+        >
+          <img class="genre-img" [src]="getImageUrl(genre)" alt="..." />
+          <span>{{ genre | uppercase }}</span>
+          <img class="next-img" src="/assets/images/Next.svg" alt="..." />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

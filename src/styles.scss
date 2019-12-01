@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  font-family: Montserrat;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+header,
+footer {
+  min-height: 100px;
+  background: white;
+}
+input {
+  border-radius: 4px;
+  padding: 0 10px;
+  height: 40px;
+}

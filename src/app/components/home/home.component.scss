@@ -1,0 +1,52 @@
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.home-container {
+  background-image: url("/assets/images/Pattern.svg");
+  background-color: #f8f7ff;
+  background-repeat: repeat-y;
+  .body-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .heading1 {
+      font-family: Montserrat;
+      font-weight: semi-bold;
+      font-size: 48px;
+      color: #5e56e7;
+      padding: 20px;
+    }
+    .heading2 {
+      font-family: Montserrat;
+      font-size: 30px;
+      padding: 20px;
+    }
+    .genre-container {
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: space-between;
+
+      .genre-card {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 4px;
+        padding: 0 15px;
+        height: 50px;
+        box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+        margin: 10px;
+        span {
+          display: flex;
+          flex: 1;
+          font-family: Montserrat;
+          font-size: 20px;
+          margin: auto 15px;
+        }
+        .genre-img {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
